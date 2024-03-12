@@ -26,7 +26,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    //ComponentDidMount
+    // ComponentDidMount
     getUser();
   }, []);
 
@@ -37,6 +37,12 @@ const Home = () => {
 
   //! Add random user to the usersList table
   const handleAddUser = (freshUser) => {
+    // check if user is already in usersList
+    const userExists = usersList.some((item) => item.id === freshUser.id);
+    if (userExists) {
+      return;
+    }
+    setUser( {...user, hasUserBeenAdded: true})
     setUsersList([...usersList, freshUser]);
   };
 

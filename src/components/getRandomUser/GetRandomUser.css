@@ -24,38 +24,34 @@
   text-align: center;
 }
 
-.icons > .icons--user:hover {
+.icons > .icons--user:hover,
+.icons > .icons--email:hover,
+.icons > .icons--birthday:hover,
+.icons > .icons--phone:hover,
+.icons > .icons--location:hover {
+  border-top: 5px solid black;
   transform: translateY(-10px);
   transition-duration: 0.5s;
+  padding: 0.4rem !important;
+}
+
+.icons > .icons--user:hover {
   background-image: linear-gradient(to bottom, rgb(201, 40, 40), #fff);
   color: black !important;
-  padding: 0.5rem !important;
 }
 .icons > .icons--email:hover {
-  transform: translateY(-10px);
-  transition-duration: 0.5s;
   background-image: linear-gradient(to bottom, #a085eb, #fff);
   color: #111962 !important;
-  padding: 0.5rem !important;
 }
 .icons > .icons--birthday:hover {
-  transform: translateY(-10px);
-  transition-duration: 0.5s;
   background-image: linear-gradient(to bottom, rgb(255, 255, 0), #fff);
   color: #f46508 !important;
-  padding: 0.5rem !important;
 }
 .icons > .icons--phone:hover {
-  transform: translateY(-10px);
-  transition-duration: 0.5s;
   background-image: linear-gradient(to bottom, rgb(54, 186, 54), #fff);
   color: #5b2958 !important;
-  padding: 0.5rem !important;
 }
 .icons > .icons--location:hover {
-  transform: translateY(-10px);
-  transition-duration: 0.5s;
   background-image: linear-gradient(to bottom, #6aa6be, #fff);
   color: green !important;
-  padding: 0.5rem !important;
 }

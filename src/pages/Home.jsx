@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // ComponentDidMount
+    //ComponentDidMount
     getUser();
   }, []);
 

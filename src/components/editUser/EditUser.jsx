@@ -1,7 +1,8 @@
 import React from "react";
 
-const EditUser = ({ item, setItem, editUser, usersList, setUsersList }) => {
-  const { id, name, email, phone, age } = item;
+const EditUser = ({ item, setItem, editUser }) => {
+  const { name, email, phone, age } = item;
+
   return (
     <div
       class="modal fade"

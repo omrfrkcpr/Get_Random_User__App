@@ -1,0 +1,61 @@
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(222, 184, 135, 0.552);
+  width: auto !important;
+  height: 60px !important;
+  border-radius: 30px;
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  border-radius: 50%;
+  background: initial;
+  text-align: center;
+}
+
+.icons > .icons--user:hover {
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+  background-image: linear-gradient(to bottom, rgb(201, 40, 40), #fff);
+  color: black !important;
+  padding: 0.5rem !important;
+}
+.icons > .icons--email:hover {
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+  background-image: linear-gradient(to bottom, #a085eb, #fff);
+  color: #111962 !important;
+  padding: 0.5rem !important;
+}
+.icons > .icons--birthday:hover {
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+  background-image: linear-gradient(to bottom, rgb(255, 255, 0), #fff);
+  color: #f46508 !important;
+  padding: 0.5rem !important;
+}
+.icons > .icons--phone:hover {
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+  background-image: linear-gradient(to bottom, rgb(54, 186, 54), #fff);
+  color: #5b2958 !important;
+  padding: 0.5rem !important;
+}
+.icons > .icons--location:hover {
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+  background-image: linear-gradient(to bottom, #6aa6be, #fff);
+  color: green !important;
+  padding: 0.5rem !important;
+}

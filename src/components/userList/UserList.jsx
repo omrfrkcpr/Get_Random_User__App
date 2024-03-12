@@ -3,13 +3,31 @@ import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditUser from "../editUser/EditUser";
 
-const UserList = ({ usersList, setUsersList, editUser }) => {
+const UserList = ({ usersList, setUsersList }) => {
   console.log(usersList);
   const [item, setItem] = useState("");
 
+  // Delete selected user from usersList
   const handleDeleteUser = (id) => {
-    const updatedList = usersList.filter((user) => user.id !== id);
-    setUsersList(updatedList);
+    if (
+      window.confirm(
+        `Are you sure you want to delete user with id number ${id}`
+      )
+    ) {
+      const updatedList = usersList.filter((user) => user.id !== id);
+      setUsersList(updatedList);
+    }
+  };
+
+  // Edit selected user's info from usersList
+  const editUser = (updatedUser) => {
+    if (window.confirm("The changes you make will be saved. Are you sure?")) {
+      setUsersList(
+        usersList.map((user) =>
+          user.id === updatedUser.id ? updatedUser : user
+        )
+      );
+    }
   };
 
   return (

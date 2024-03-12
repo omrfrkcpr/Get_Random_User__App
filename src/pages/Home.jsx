@@ -5,8 +5,8 @@ import UserList from "../components/userList/UserList";
 import AddUser from "../components/addUser/AddUser";
 
 const Home = () => {
-  const [user, setUser] = useState([]);
-  const [toggle, setToggle] = useState(false);
+  const [user, setUser] = useState();
+  const [showUserForm, setShowUserForm] = useState(false);
   const [usersList, setUsersList] = useState([]);
 
   //! Get random user from API
@@ -31,12 +31,12 @@ const Home = () => {
 
   //! Toggle page for creating new user manually
   const handleToggle = () => {
-    setToggle(!toggle);
+    setShowUserForm(!showUserForm);
   };
 
   //! Add random user to the usersList table
   const handleAddUser = (freshUser) => {
-    setUsersList(...usersList, freshUser);
+    setUsersList([...usersList, freshUser]);
   };
 
   //! Get a new random user from API
@@ -58,7 +58,11 @@ const Home = () => {
         handleAddUser={handleAddUser}
         handleNewUser={handleNewUser}
       />
-      {toggle && <AddUser />}
+      {showUserForm && (
+        <AddUser
+          editUser={(newUser) => setUsersList([...usersList, newUser])}
+        />
+      )}
       <UserList
         usersList={usersList}
         setUsersList={setUsersList}

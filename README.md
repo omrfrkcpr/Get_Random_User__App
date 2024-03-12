@@ -1,9 +1,5 @@
 # Get Random User App
 
-# Get Random User App
-
-## Description
-
 ## Description
 
 This project aims to fetch random user data via Axios from an open-source, free API or manually create users and store them in a tabular format.

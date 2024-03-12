@@ -1,5 +1,9 @@
 # Get Random User App
 
+# Get Random User App
+
+## Description
+
 ## Description
 
 This project aims to fetch random user data via Axios from an open-source, free API or manually create users and store them in a tabular format.
@@ -77,6 +81,19 @@ Build a Random User App using ReactJS.
 
 - JS (ReactJS)
 
+### At the end of the project, students will be able to;
+
+- improve coding skills within HTML & CSS & JS & ReactJS.
+
+- use git commands (push, pull, commit, add etc.) and Github as Version Control System.
+
+## Additional Data
+
+- [Tutorial Database](https://tutorial-api.fullstack.clarusway.com/tutorials/)
+- [Open-Source API for Random-User](https://randomuser.me/api)
+- [Free API for Avatar-Images](https://www.dicebear.com/styles/avataaars/)
+
+<p align="center"><strong>&#9786; Happy Coding &#9997;</strong></p>
 ### At the end of the project, students will be able to;
 
 - improve coding skills within HTML & CSS & JS & ReactJS.

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import uuid from "react-uuid";
 
-const AddInfo = ({ editUser }) => {
+function generateRandomId() {
+  const min = 10000000;
+  const max = 99999999;
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  return randomNumber;
+}
+
+const AddUser = ({ editUser }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -11,7 +18,13 @@ const AddInfo = ({ editUser }) => {
     e.preventDefault();
 
     //! POST into table
-    editUser({ id: uuid(), name: name, email: email, phone: phone, age: age });
+    editUser({
+      id: generateRandomId(),
+      name: name,
+      email: email,
+      phone: phone,
+      age: age,
+    });
   };
 
   return (
@@ -82,4 +95,4 @@ const AddInfo = ({ editUser }) => {
   );
 };
 
-export default AddInfo;
+export default AddUser;

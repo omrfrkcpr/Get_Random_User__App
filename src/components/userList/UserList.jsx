@@ -3,9 +3,14 @@ import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditUser from "../editUser/EditUser";
 
-const UserList = ({ usersList, setUsersList, deleteUser, editUser }) => {
+const UserList = ({ usersList, setUsersList, editUser }) => {
   console.log(usersList);
   const [item, setItem] = useState("");
+
+  const handleDeleteUser = (id) => {
+    const updatedList = usersList.filter((user) => user.id !== id);
+    setUsersList(updatedList);
+  };
 
   return (
     <div className="container mt-4">
@@ -39,7 +44,7 @@ const UserList = ({ usersList, setUsersList, deleteUser, editUser }) => {
                       marginRight: ".5rem",
                     }}
                     size={22}
-                    onClick={() => deleteUser(id)}
+                    onClick={() => handleDeleteUser(id)}
                   />
                   <FaEdit
                     type="button"
@@ -57,7 +62,13 @@ const UserList = ({ usersList, setUsersList, deleteUser, editUser }) => {
       </table>
 
       {/* Modal */}
-      <EditUser item={item} setItem={setItem} editUser={editUser} />
+      <EditUser
+        item={item}
+        setItem={setItem}
+        usersList={usersList}
+        setUsersList={setUsersList}
+        editUser={editUser}
+      />
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Home = () => {
   const [showUserForm, setShowUserForm] = useState(false);
   const [usersList, setUsersList] = useState([]);
 
-  //! Get random user from API
+  // Get random user from API
   const getUser = async () => {
     setUser(null);
     try {
@@ -30,30 +30,15 @@ const Home = () => {
     getUser();
   }, []);
 
-  //! Toggle page for creating new user manually
-  const handleToggle = () => {
-    setShowUserForm(!showUserForm);
-  };
-
-  //! Add random user to the usersList table
+  // Add random user to the usersList table
   const handleAddUser = (freshUser) => {
     // check if user is already in usersList
     const userExists = usersList.some((item) => item.id === freshUser.id);
     if (userExists) {
       return;
     }
-    setUser( {...user, hasUserBeenAdded: true})
+    setUser({ ...user, hasUserBeenAdded: true });
     setUsersList([...usersList, freshUser]);
-  };
-
-  //! Get a new random user from API
-  const handleNewUser = () => {
-    getUser();
-  };
-
-  //! Delete selected user
-  const deleteUser = (id) => {
-    usersList.map((item) => item.id !== id);
   };
 
   return (
@@ -61,20 +46,21 @@ const Home = () => {
       <GetRandomUser
         user={user}
         setUser={setUser}
-        handleToggle={handleToggle}
+        handleToggle={() => setShowUserForm(!showUserForm)}
         handleAddUser={handleAddUser}
-        handleNewUser={handleNewUser}
+        handleNewUser={() => getUser()}
+        showUserForm={showUserForm}
       />
       {showUserForm && (
         <AddUser
-          editUser={(newUser) => setUsersList([...usersList, newUser])}
+          editUser={(newUser) =>
+            !usersList.some((user) => user.name === newUser.name)
+              ? setUsersList([...usersList, newUser])
+              : alert("Please add a different user")
+          }
         />
       )}
-      <UserList
-        usersList={usersList}
-        setUsersList={setUsersList}
-        deleteUser={deleteUser}
-      />
+      <UserList usersList={usersList} setUsersList={setUsersList} />
     </div>
   );
 };

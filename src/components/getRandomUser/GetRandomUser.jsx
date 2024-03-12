@@ -34,7 +34,7 @@ const GetRandomUser = ({
         <button className="me-4" onClick={handleNewUser}>
           Get User
         </button>
-        <button onClick={() => handleAddUser(freshUser)} className="me-4">
+        <button onClick={() => handleAddUser(freshUser)} className="me-4" disabled={!user}>
           Add User
         </button>
         <button onClick={handleToggle}>Create New User</button>

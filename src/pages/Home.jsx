@@ -11,6 +11,7 @@ const Home = () => {
 
   //! Get random user from API
   const getUser = async () => {
+    setUser(null);
     try {
       const response = await axios.get("https://randomuser.me/api");
 

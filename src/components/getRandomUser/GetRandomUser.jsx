@@ -9,20 +9,14 @@ import womanAgeSvg from "../../assets/growing-up-woman.svg";
 import mapSvg from "../../assets/map.svg";
 import phoneSvg from "../../assets/phone.svg";
 
-function generateRandomId() {
-  const min = 10000000;
-  const max = 99999999;
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
-  return randomNumber;
-}
-
 const GetRandomUser = ({
   user,
   handleToggle,
   handleAddUser,
   handleNewUser,
   showUserForm,
+  loading,
+  setLoading,
 }) => {
   const [changeImg, setChangeImg] = useState(false);
   const [hoveredIcon, setHoveredIcon] = useState("name");
@@ -31,6 +25,14 @@ const GetRandomUser = ({
   const handleImg = () => {
     setChangeImg(!changeImg);
   };
+
+  function generateRandomId() {
+    const min = 10000000;
+    const max = 99999999;
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    return randomNumber;
+  }
 
   // Convert user datas that we get from API to saveable format
   const convertUserType = (apiUser) => {
@@ -69,11 +71,15 @@ const GetRandomUser = ({
     <div className="container text-center">
       <div
         className="user-container row border border-2 rounded-5 w-75 m-auto p-4 d-flex justify-content-center"
-        style={{ height: "490px", position: "relative" }}
+        style={{
+          height: "490px",
+          position: "relative",
+          backgroundColor: "rgb(163, 63, 63)",
+        }}
       >
         <div className="d-flex justify-content-center align-items-center">
           <button
-            className="btn btn-warning changeBtn"
+            className="btn changeBtn"
             style={{ width: "120px" }}
             onClick={handleImg}
           >
@@ -86,11 +92,15 @@ const GetRandomUser = ({
               ? `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.name?.first}`
               : user?.picture?.large
           }
-          className="rounded-circle border-0"
+          className="rounded-circle"
           alt=""
-          style={{ width: "300px", height: "300px", margin: ".5rem auto" }}
+          style={{
+            width: "320px",
+            height: "300px",
+            margin: "0.5rem auto",
+          }}
         />
-        <div className="result" style={{ height: "60px" }}>
+        <div className="result" style={{ height: "60px", color: "white" }}>
           <span>{iconTexts[hoveredIcon]}</span>
           <h1
             id="name"
@@ -135,7 +145,7 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
-              border: "1px solid grey",
+              border: "1px solid white",
             }}
             onMouseEnter={() => iconHoverHandler("name")}
             onMouseLeave={() => iconHoverHandler("name")}
@@ -151,7 +161,7 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
-              border: "1px solid grey",
+              border: "1px solid white",
             }}
             onMouseEnter={() => iconHoverHandler("email")}
             onMouseLeave={() => iconHoverHandler("name")}
@@ -166,7 +176,7 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
-              border: "1px solid grey",
+              border: "1px solid white",
             }}
             onMouseEnter={() => iconHoverHandler("birthday")}
             onMouseLeave={() => iconHoverHandler("name")}
@@ -181,7 +191,7 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
-              border: "1px solid grey",
+              border: "1px solid white",
             }}
             onMouseEnter={() => iconHoverHandler("phone")}
             onMouseLeave={() => iconHoverHandler("name")}
@@ -195,7 +205,7 @@ const GetRandomUser = ({
               color: "#67262a",
               fontSize: "40px",
               padding: ".2rem",
-              border: "1px solid grey",
+              border: "1px solid white",
             }}
             onMouseEnter={() => iconHoverHandler("location")}
             onMouseLeave={() => iconHoverHandler("name")}
@@ -204,24 +214,25 @@ const GetRandomUser = ({
       </div>
       <div className="text-center mt-3">
         <button
-          className="me-4 btn"
+          className="me-4 btn handleBtn"
           onClick={handleNewUser}
-          style={{ backgroundColor: "indianred", color: "whitesmoke" }}
+          style={{ backgroundColor: "#A33F3F", color: "whitesmoke" }}
+          disabled={!loading}
         >
-          Get User
+          {loading ? "Get User" : "Loading..."}
         </button>
         <button
           onClick={() => handleAddUser(convertUserType(user))}
-          className="me-4 btn"
-          style={{ backgroundColor: "indianred", color: "whitesmoke" }}
+          className="me-4 btn handleBtn"
+          style={{ backgroundColor: "#A33F3F", color: "whitesmoke" }}
           disabled={!user || user?.hasUserBeenAdded}
         >
           Add User
         </button>
         <button
           onClick={handleToggle}
-          className="btn"
-          style={{ backgroundColor: "indianred", color: "whitesmoke" }}
+          className="btn handleBtn"
+          style={{ backgroundColor: "#A33F3F", color: "whitesmoke" }}
         >
           {showUserForm ? "Close Add-User Form" : "Show Add-User Form"}
         </button>

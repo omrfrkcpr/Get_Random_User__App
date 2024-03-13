@@ -9,10 +9,27 @@
   border-radius: 30px;
 }
 
+.btn {
+  background-color: indianred;
+  border: none;
+}
+
+.handleBtn:hover {
+  opacity: 0.8;
+}
+
 .changeBtn {
   position: absolute;
   top: 20px;
   right: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: rgb(225, 171, 171);
+}
+
+.changeBtn:hover {
+  background-color: whitesmoke;
+  color: rgb(139, 79, 79);
 }
 
 .icon {

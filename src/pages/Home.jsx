@@ -8,10 +8,12 @@ const Home = () => {
   const [user, setUser] = useState();
   const [showUserForm, setShowUserForm] = useState(false);
   const [usersList, setUsersList] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // Get random user from API
   const getUser = async () => {
     setUser(null);
+    setLoading(null);
     try {
       const response = await axios.get("https://randomuser.me/api");
 
@@ -23,6 +25,7 @@ const Home = () => {
     } catch (err) {
       console.log(err);
     }
+    setLoading(true);
   };
 
   useEffect(() => {
@@ -42,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <div className="border border-2 border-danger p-3">
+    <div className=" p-3">
       {showUserForm ? (
         <AddUser
           editUser={(newUser) =>
@@ -61,6 +64,8 @@ const Home = () => {
           handleAddUser={handleAddUser}
           handleNewUser={() => getUser()}
           showUserForm={showUserForm}
+          loading={loading}
+          setLoading={setLoading}
         />
       )}
       <UserList usersList={usersList} setUsersList={setUsersList} />

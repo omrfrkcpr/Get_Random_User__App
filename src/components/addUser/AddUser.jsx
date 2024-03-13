@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AddUser.css";
+import "../addUser/AddUser.css";
 
 function generateRandomId() {
   const min = 10000000;

@@ -37,10 +37,10 @@ const AddUser = ({ editUser, showUserForm, setShowUserForm }) => {
 
   return (
     <div
-      className="add-container container border border-2 rounded-4 p-4 text-center mt-4 w-75 d-flex flex-column justify-content-center align-items-between m-auto"
+      className="add-container container border border-2 rounded-4 p-4 text-center mt-4 w-auto d-flex flex-column justify-content-center align-items-between m-auto"
       style={{ height: "500px" }}
     >
-      <h1 className="display-6 text-white fw-bold">Add New User</h1>
+      <h1 className="display-6 text-white fw-bold m-auto mb-3">Add New User</h1>
       <form>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">

@@ -97,11 +97,11 @@ const GetRandomUser = ({
           style={{
             width: "320px",
             height: "300px",
-            margin: "0.5rem auto",
+            margin: "0.5rem",
           }}
         />
         <div
-          className="result"
+          className="result text-center d-flex flex-column justify-content-center align-items-center"
           style={{
             height: "60px",
             color: "white",

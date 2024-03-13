@@ -73,7 +73,7 @@ const GetRandomUser = ({
       >
         <div className="d-flex justify-content-center align-items-center">
           <button
-            className="border-1"
+            className="btn btn-warning"
             style={{ width: "120px" }}
             onClick={handleImg}
           >
@@ -203,17 +203,26 @@ const GetRandomUser = ({
         </div>
       </div>
       <div className="text-center mt-3">
-        <button className="me-4" onClick={handleNewUser}>
+        <button
+          className="me-4 btn"
+          onClick={handleNewUser}
+          style={{ backgroundColor: "indianred", color: "whitesmoke" }}
+        >
           Get User
         </button>
         <button
           onClick={() => handleAddUser(convertUserType(user))}
-          className="me-4"
+          className="me-4 btn"
+          style={{ backgroundColor: "indianred", color: "whitesmoke" }}
           disabled={!user || user?.hasUserBeenAdded}
         >
           Add User
         </button>
-        <button onClick={handleToggle}>
+        <button
+          onClick={handleToggle}
+          className="btn"
+          style={{ backgroundColor: "indianred", color: "whitesmoke" }}
+        >
           {showUserForm ? "Close Add-User Form" : "Show Add-User Form"}
         </button>
       </div>

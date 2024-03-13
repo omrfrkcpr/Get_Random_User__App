@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./AddUser.css";
 
 function generateRandomId() {
   const min = 10000000;
@@ -37,10 +38,10 @@ const AddUser = ({ editUser, showUserForm, setShowUserForm }) => {
 
   return (
     <div
-      className="add-container container border border-2 p-4 text-center mt-4 w-75 d-flex flex-column justify-content-center align-items-between m-auto"
+      className="add-container container border border-2 rounded-4 p-4 text-center mt-4 w-75 d-flex flex-column justify-content-center align-items-between m-auto"
       style={{ height: "500px" }}
     >
-      <h1 className="display-6 text-danger">Add New User</h1>
+      <h1 className="display-6 text-white fw-bold">Add New User</h1>
       <form>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -97,12 +98,12 @@ const AddUser = ({ editUser, showUserForm, setShowUserForm }) => {
         <div>
           <button
             type="submit"
-            className="btn btn-danger mb-4"
+            className="btn btnSubmit mb-4"
             onClick={handleSubmit}
           >
             Create
           </button>
-          <button onClick={handleGoBack} className="btn btn-success ms-2 mb-4">
+          <button onClick={handleGoBack} className="btn btnBack ms-2 mb-4">
             Go Get Random User
           </button>
         </div>

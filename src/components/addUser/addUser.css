@@ -1,0 +1,19 @@
+.btnSubmit {
+  background-color: green !important;
+  color: whitesmoke;
+}
+
+.btnBack {
+  background-color: orange;
+}
+
+.btnSubmit:hover {
+  opacity: 0.7 !important;
+  background-color: green !important;
+  color: whitesmoke;
+}
+
+.btnBack:hover {
+  opacity: 0.7 !important;
+  background-color: orange !important;
+}

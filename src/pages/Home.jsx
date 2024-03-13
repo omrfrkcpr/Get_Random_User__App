@@ -41,7 +41,7 @@ const Home = () => {
       return;
     }
     setUser({ ...user, hasUserBeenAdded: true });
-    setUsersList([...usersList, freshUser]);
+    setUsersList([freshUser, ...usersList]);
   };
 
   return (
@@ -50,7 +50,7 @@ const Home = () => {
         <AddUser
           editUser={(newUser) =>
             !usersList.some((user) => user.name === newUser.name)
-              ? setUsersList([...usersList, newUser])
+              ? setUsersList([newUser, ...usersList])
               : alert("Please add a different user")
           }
           showUserForm={showUserForm}

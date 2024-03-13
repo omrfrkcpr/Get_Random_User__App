@@ -79,9 +79,13 @@ Build a Random User App using ReactJS.
 
 - CSS (React-Bootstrap)
 
-- JS (ReactJS)
+- JS 
 
-### At the end of the project, students will be able to;
+- ReactJs & React Hooks 
+
+- Axios (API)
+
+### At the end of the project, will be able to;
 
 - improve coding skills within HTML & CSS & JS & ReactJS.
 

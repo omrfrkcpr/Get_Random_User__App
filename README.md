@@ -92,4 +92,14 @@ Build a Random User App using ReactJS.
 - [Open-Source API for Random-User](https://randomuser.me/api)
 - [Free API for Avatar-Images](https://www.dicebear.com/styles/avataaars/)
 
+## Contributing
+
+Your insights and contributions greatly enrich my projects! Whether you're bursting with fresh project concepts or have ideas to enhance existing ones, your input is invaluable. Feel free to open an issue to initiate a dialogue about your thoughts, or submit a pull request with your proposed modifications. Every contribution plays a vital role in my growth and improvement, so thank you for being an integral part of my community!
+
+## LICENSE
+
+This repository is licensed under the GNU General Public License v3.0 License. See the GPL licence file for details.
+
+
+
 <p align="center"><strong>&#9786; Happy Coding &#9997;</strong></p>

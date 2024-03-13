@@ -7,7 +7,7 @@ const EditUser = ({ item, setItem, editUser }) => {
     <div
       class="modal fade"
       id="editModal"
-      data-bs-backdrop="static"
+      data-bs-backdrop="false"
       data-bs-keyboard="false"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
@@ -17,7 +17,7 @@ const EditUser = ({ item, setItem, editUser }) => {
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title fs-5" id="exampleModalLabel">
-              Modal
+              Edit User
             </h5>
             <button
               type="button"

@@ -61,7 +61,7 @@ const UserList = ({ usersList, setUsersList }) => {
   };
 
   return (
-    <div className="mt-3 mb-5">
+    <div className="mt-3 userList-container">
       <table
         className="table table-striped"
         style={{ width: "1200px", margin: "auto", overflow: "auto" }}

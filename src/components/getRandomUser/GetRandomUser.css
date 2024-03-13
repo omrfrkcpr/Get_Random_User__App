@@ -9,6 +9,12 @@
   border-radius: 30px;
 }
 
+.changeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 .icon {
   position: relative;
   display: flex;

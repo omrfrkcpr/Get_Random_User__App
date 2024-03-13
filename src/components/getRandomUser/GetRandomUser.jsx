@@ -66,14 +66,14 @@ const GetRandomUser = ({
   };
 
   return (
-    <div className="container text-center mt-4">
+    <div className="container text-center">
       <div
         className="user-container row border border-2 rounded-5 w-75 m-auto p-4 d-flex justify-content-center"
-        style={{ height: "600px" }}
+        style={{ height: "490px", position: "relative" }}
       >
         <div className="d-flex justify-content-center align-items-center">
           <button
-            className="btn btn-warning"
+            className="btn btn-warning changeBtn"
             style={{ width: "120px" }}
             onClick={handleImg}
           >
@@ -88,9 +88,9 @@ const GetRandomUser = ({
           }
           className="rounded-circle border-0"
           alt=""
-          style={{ width: "300px", height: "300px", margin: "1rem auto" }}
+          style={{ width: "300px", height: "300px", margin: ".5rem auto" }}
         />
-        <div className="result" style={{ height: "80px" }}>
+        <div className="result" style={{ height: "60px" }}>
           <span>{iconTexts[hoveredIcon]}</span>
           <h1
             id="name"
@@ -124,7 +124,7 @@ const GetRandomUser = ({
             {user?.location?.city}
           </h1>
         </div>
-        <div className="icons w-75 d-flex text-center align-items-center justify-content-center">
+        <div className="icons w-75 d-flex text-center align-items-center justify-content-center mt-3">
           <img
             src={user?.gender === "male" ? manSvg : womanSvg}
             alt="user-icon"

@@ -42,7 +42,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="border border-2 border-danger p-3">
       {showUserForm ? (
         <AddUser
           editUser={(newUser) =>

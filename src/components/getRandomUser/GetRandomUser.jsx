@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./GetRandomUser.css";
-import { FaRegUser } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaPhoneSquareAlt } from "react-icons/fa";
-import { LiaBirthdayCakeSolid } from "react-icons/lia";
-import { FaMapLocationDot } from "react-icons/fa6";
+
+import mailSvg from "../../assets/mail.svg";
+import manSvg from "../../assets/man.svg";
+import womanSvg from "../../assets/woman.svg";
+import manAgeSvg from "../../assets/growing-up-man.svg";
+import womanAgeSvg from "../../assets/growing-up-woman.svg";
+import mapSvg from "../../assets/map.svg";
+import phoneSvg from "../../assets/phone.svg";
 
 function generateRandomId() {
   const min = 10000000;
@@ -65,7 +68,7 @@ const GetRandomUser = ({
   return (
     <div className="container text-center mt-4">
       <div
-        className="row border border-2 w-75 m-auto p-4 d-flex justify-content-center"
+        className="row border border-2 w-50 m-auto p-4 d-flex justify-content-center"
         style={{ height: "600px" }}
       >
         <div className="d-flex justify-content-center align-items-center">
@@ -83,7 +86,7 @@ const GetRandomUser = ({
               ? `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.name?.first}`
               : user?.picture?.large
           }
-          className="rounded-circle"
+          className="rounded-circle border-0"
           alt=""
           style={{ width: "300px", height: "300px", margin: "1rem auto" }}
         />
@@ -122,7 +125,9 @@ const GetRandomUser = ({
           </h1>
         </div>
         <div className="icons w-75 d-flex text-center align-items-center justify-content-center">
-          <FaRegUser
+          <img
+            src={user?.gender === "male" ? manSvg : womanSvg}
+            alt="user-icon"
             className="icon icons--user"
             id="name"
             style={{
@@ -130,11 +135,15 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
+              border: "1px solid grey",
             }}
             onMouseEnter={() => iconHoverHandler("name")}
             onMouseLeave={() => iconHoverHandler("name")}
           />
-          <MdEmail
+
+          <img
+            src={mailSvg}
+            alt="mail-icon"
             className="icon icons--email"
             id="email"
             style={{
@@ -142,11 +151,14 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
+              border: "1px solid grey",
             }}
             onMouseEnter={() => iconHoverHandler("email")}
             onMouseLeave={() => iconHoverHandler("name")}
           />
-          <LiaBirthdayCakeSolid
+          <img
+            src={user?.gender === "male" ? manAgeSvg : womanAgeSvg}
+            alt="birthday-icon"
             className="icon icons--birthday"
             id="birthday"
             style={{
@@ -154,11 +166,14 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
+              border: "1px solid grey",
             }}
             onMouseEnter={() => iconHoverHandler("birthday")}
             onMouseLeave={() => iconHoverHandler("name")}
           />
-          <FaPhoneSquareAlt
+          <img
+            src={phoneSvg}
+            alt="phone-icon"
             className="icon icons--phone"
             id="phone"
             style={{
@@ -166,14 +181,22 @@ const GetRandomUser = ({
               fontSize: "40px",
               marginRight: "1rem",
               padding: ".2rem",
+              border: "1px solid grey",
             }}
             onMouseEnter={() => iconHoverHandler("phone")}
             onMouseLeave={() => iconHoverHandler("name")}
           />
-          <FaMapLocationDot
+          <img
+            src={mapSvg}
+            alt="location-icon"
             className="icon icons--location"
             id="location"
-            style={{ color: "#67262a", fontSize: "40px", padding: ".2rem" }}
+            style={{
+              color: "#67262a",
+              fontSize: "40px",
+              padding: ".2rem",
+              border: "1px solid grey",
+            }}
             onMouseEnter={() => iconHoverHandler("location")}
             onMouseLeave={() => iconHoverHandler("name")}
           />

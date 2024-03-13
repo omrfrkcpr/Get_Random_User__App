@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditUser from "../editUser/EditUser";
+import "./UserList.css";
 
 const UserList = ({ usersList, setUsersList }) => {
   console.log(usersList);
@@ -31,16 +32,50 @@ const UserList = ({ usersList, setUsersList }) => {
   };
 
   return (
-    <div className="container mt-4">
-      <table className="table table-striped">
+    <div className="mt-3 mb-5">
+      <table
+        className="table table-striped"
+        style={{ width: "800px", margin: "auto", overflow: "auto" }}
+      >
         <thead>
           <tr>
-            <th scope="col">#id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Age</th>
-            <th scope="col" className="text-center">
+            <th
+              scope="col"
+              style={{
+                backgroundColor: "rgba(222, 184, 135, 0.552)",
+              }}
+            >
+              #id
+            </th>
+            <th
+              scope="col"
+              style={{ backgroundColor: "rgba(222, 184, 135, 0.552)" }}
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+              style={{ backgroundColor: "rgba(222, 184, 135, 0.552)" }}
+            >
+              Email
+            </th>
+            <th
+              scope="col"
+              style={{ backgroundColor: "rgba(222, 184, 135, 0.552)" }}
+            >
+              Phone
+            </th>
+            <th
+              scope="col"
+              style={{ backgroundColor: "rgba(222, 184, 135, 0.552)" }}
+            >
+              Age
+            </th>
+            <th
+              scope="col"
+              style={{ backgroundColor: "rgba(222, 184, 135, 0.552)" }}
+              className="text-center"
+            >
               Edit
             </th>
           </tr>

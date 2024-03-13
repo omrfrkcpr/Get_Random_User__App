@@ -35,7 +35,7 @@ const UserList = ({ usersList, setUsersList }) => {
     <div className="mt-3 mb-5">
       <table
         className="table table-striped"
-        style={{ width: "800px", margin: "auto", overflow: "auto" }}
+        style={{ width: "1200px", margin: "auto", overflow: "auto" }}
       >
         <thead>
           <tr>
@@ -49,13 +49,17 @@ const UserList = ({ usersList, setUsersList }) => {
             </th>
             <th
               scope="col"
-              style={{ backgroundColor: "rgba(222, 184, 135, 0.552)" }}
+              style={{
+                backgroundColor: "rgba(222, 184, 135, 0.552)",
+              }}
             >
               Name
             </th>
             <th
               scope="col"
-              style={{ backgroundColor: "rgba(222, 184, 135, 0.552)" }}
+              style={{
+                backgroundColor: "rgba(222, 184, 135, 0.552)",
+              }}
             >
               Email
             </th>

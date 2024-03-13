@@ -61,7 +61,10 @@ const UserList = ({ usersList, setUsersList }) => {
   };
 
   return (
-    <div className="mt-3 userList-container">
+    <div
+      className="mt-3 userList-container"
+      style={{ width: "80%", margin: "auto" }}
+    >
       <table
         className="table table-striped"
         style={{ width: "1200px", margin: "auto", overflow: "auto" }}

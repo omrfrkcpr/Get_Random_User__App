@@ -27,9 +27,8 @@ const AddUser = ({ editUser, showUserForm, setShowUserForm }) => {
         phone: phone,
         age: age,
       });
+      setShowUserForm(!showUserForm);
     } else alert("Please enter all user information");
-
-    setShowUserForm(!showUserForm);
   };
 
   const handleGoBack = () => {

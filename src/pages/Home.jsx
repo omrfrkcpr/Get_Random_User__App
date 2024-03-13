@@ -43,21 +43,24 @@ const Home = () => {
 
   return (
     <div>
-      <GetRandomUser
-        user={user}
-        setUser={setUser}
-        handleToggle={() => setShowUserForm(!showUserForm)}
-        handleAddUser={handleAddUser}
-        handleNewUser={() => getUser()}
-        showUserForm={showUserForm}
-      />
-      {showUserForm && (
+      {showUserForm ? (
         <AddUser
           editUser={(newUser) =>
             !usersList.some((user) => user.name === newUser.name)
               ? setUsersList([...usersList, newUser])
               : alert("Please add a different user")
           }
+          showUserForm={showUserForm}
+          setShowUserForm={setShowUserForm}
+        />
+      ) : (
+        <GetRandomUser
+          user={user}
+          setUser={setUser}
+          handleToggle={() => setShowUserForm(!showUserForm)}
+          handleAddUser={handleAddUser}
+          handleNewUser={() => getUser()}
+          showUserForm={showUserForm}
         />
       )}
       <UserList usersList={usersList} setUsersList={setUsersList} />

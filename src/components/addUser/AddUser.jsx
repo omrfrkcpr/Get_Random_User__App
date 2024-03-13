@@ -8,7 +8,7 @@ function generateRandomId() {
   return randomNumber;
 }
 
-const AddUser = ({ editUser }) => {
+const AddUser = ({ editUser, showUserForm, setShowUserForm }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -18,17 +18,28 @@ const AddUser = ({ editUser }) => {
     e.preventDefault();
 
     //! POST into table
-    editUser({
-      id: generateRandomId(),
-      name: name,
-      email: email,
-      phone: phone,
-      age: age,
-    });
+    if (name !== "" && email !== "" && phone !== "" && age !== "") {
+      editUser({
+        id: generateRandomId(),
+        name: name,
+        email: email,
+        phone: phone,
+        age: age,
+      });
+    } else alert("Please enter all user information");
+
+    setShowUserForm(!showUserForm);
+  };
+
+  const handleGoBack = () => {
+    setShowUserForm(!showUserForm);
   };
 
   return (
-    <div className="container text-center mt-4">
+    <div
+      className="border border-2 p-4 text-center w-50 d-flex flex-column justify-content-center align-items-between m-auto"
+      style={{ height: "600px" }}
+    >
       <h1 className="display-6 text-danger">Add New User</h1>
       <form>
         <div className="mb-3">
@@ -83,13 +94,18 @@ const AddUser = ({ editUser }) => {
             onChange={(e) => setAge(e.target.value)}
           />
         </div>
-        <button
-          type="submit"
-          className="btn btn-danger mb-4"
-          onClick={handleSubmit}
-        >
-          Create
-        </button>
+        <div>
+          <button
+            type="submit"
+            className="btn btn-danger mb-4"
+            onClick={handleSubmit}
+          >
+            Create
+          </button>
+          <button onClick={handleGoBack} className="btn btn-success ms-2 mb-4">
+            Go Get Random User
+          </button>
+        </div>
       </form>
     </div>
   );

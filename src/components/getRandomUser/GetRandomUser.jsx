@@ -70,9 +70,9 @@ const GetRandomUser = ({
   return (
     <div className="container text-center">
       <div
-        className="user-container row border border-2 rounded-5 w-75 m-auto p-4 d-flex justify-content-center"
+        className="user-container row border border-2 rounded-5 w-auto m-auto pt-0 p-4 d-flex justify-content-center"
         style={{
-          height: "490px",
+          height: "460px",
           position: "relative",
           backgroundColor: "rgb(163, 63, 63)",
         }}
@@ -100,7 +100,13 @@ const GetRandomUser = ({
             margin: "0.5rem auto",
           }}
         />
-        <div className="result" style={{ height: "60px", color: "white" }}>
+        <div
+          className="result"
+          style={{
+            height: "60px",
+            color: "white",
+          }}
+        >
           <span>{iconTexts[hoveredIcon]}</span>
           <h1
             id="name"

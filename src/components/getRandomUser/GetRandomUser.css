@@ -9,6 +9,11 @@
   border-radius: 30px;
 }
 
+h1 {
+  width: fit-content;
+  margin: auto;
+}
+
 .btn {
   background-color: indianred;
   border: none;

@@ -12,7 +12,7 @@ const UserList = ({ usersList, setUsersList }) => {
   // Delete id row from table when the screen < 634px
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 634);
+      setIsSmallScreen(window.innerWidth <= 800);
     };
 
     window.addEventListener("resize", handleResize);

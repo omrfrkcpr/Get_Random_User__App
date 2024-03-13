@@ -68,7 +68,7 @@ const GetRandomUser = ({
   return (
     <div className="container text-center mt-4">
       <div
-        className="row border border-2 w-50 m-auto p-4 d-flex justify-content-center"
+        className="user-container row border border-2 w-75 m-auto p-4 d-flex justify-content-center"
         style={{ height: "600px" }}
       >
         <div className="d-flex justify-content-center align-items-center">

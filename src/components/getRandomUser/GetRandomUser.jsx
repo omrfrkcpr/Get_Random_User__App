@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./GetRandomUser.css";
 
+import random from "../../assets/random-user.png";
 import mailSvg from "../../assets/mail.svg";
 import manSvg from "../../assets/man.svg";
 import womanSvg from "../../assets/woman.svg";
@@ -67,6 +68,16 @@ const GetRandomUser = ({
     location: "My location is ",
   };
 
+  const generateSrc = () => {
+    if (changeImg && user?.name?.first !== undefined) {
+      return `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.name?.first}`;
+    } else if (!loading) {
+      return random;
+    } else {
+      return user?.picture?.large;
+    }
+  };
+
   return (
     <div className="container text-center">
       <div
@@ -87,11 +98,7 @@ const GetRandomUser = ({
           </button>
         </div>
         <img
-          src={
-            changeImg && user?.name?.first !== undefined
-              ? `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.name?.first}`
-              : user?.picture?.large
-          }
+          src={generateSrc()}
           className="rounded-circle"
           alt=""
           style={{

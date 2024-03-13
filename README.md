@@ -32,9 +32,9 @@ Get Random User App(folder)
 |
 ├── public
 |     ├── index.html
-|     ├── manifest.json
-│     └── random-user.png
+│     └── manifest.json
 ├── src
+│    ├── assets
 │    ├── components
 │    │       ├── addUser
 │    │       │        ├── AddUser.css
@@ -56,7 +56,7 @@ Get Random User App(folder)
 │    └── index.js
 │
 ├── .gitignore
-├── get-random-user-app.gif
+├── get-random-user.gif
 ├── LICENSE
 ├── package.lock.json
 ├── package.json

@@ -85,4 +85,8 @@
     width: 30px;
     height: 30px;
   }
+
+  .btn {
+    font-size: smaller !important;
+  }
 }

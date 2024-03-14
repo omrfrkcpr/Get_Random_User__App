@@ -36,7 +36,7 @@ function App() {
           }}
         >
           <img src={devices} alt="devices" width="200px" />
-          <h1>
+          <h1 className="w-75 m-auto">
             This project does not support phones. Please use a tablet or
             computer.
           </h1>

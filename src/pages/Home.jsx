@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import GetRandomUser from "../components/getRandomUser/GetRandomUser";
 import UserList from "../components/userList/UserList";
@@ -9,19 +9,6 @@ const Home = () => {
   const [showUserForm, setShowUserForm] = useState(false);
   const [usersList, setUsersList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth <= 350);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   // Get random user from API
   const getUser = async () => {
@@ -53,37 +40,31 @@ const Home = () => {
   };
 
   return (
-    <>
-      {windowWidth ? (
-        <div>Ekrandan küçük</div>
+    <div className=" p-3">
+      {showUserForm ? (
+        <AddUser
+          editUser={(newUser) =>
+            !usersList.some((user) => user.name === newUser.name)
+              ? setUsersList([newUser, ...usersList])
+              : alert("Please add a different user")
+          }
+          showUserForm={showUserForm}
+          setShowUserForm={setShowUserForm}
+        />
       ) : (
-        <div className=" p-3">
-          {showUserForm ? (
-            <AddUser
-              editUser={(newUser) =>
-                !usersList.some((user) => user.name === newUser.name)
-                  ? setUsersList([newUser, ...usersList])
-                  : alert("Please add a different user")
-              }
-              showUserForm={showUserForm}
-              setShowUserForm={setShowUserForm}
-            />
-          ) : (
-            <GetRandomUser
-              user={user}
-              setUser={setUser}
-              handleToggle={() => setShowUserForm(!showUserForm)}
-              handleAddUser={handleAddUser}
-              handleNewUser={() => getUser()}
-              showUserForm={showUserForm}
-              loading={loading}
-              setLoading={setLoading}
-            />
-          )}
-          <UserList usersList={usersList} setUsersList={setUsersList} />
-        </div>
+        <GetRandomUser
+          user={user}
+          setUser={setUser}
+          handleToggle={() => setShowUserForm(!showUserForm)}
+          handleAddUser={handleAddUser}
+          handleNewUser={() => getUser()}
+          showUserForm={showUserForm}
+          loading={loading}
+          setLoading={setLoading}
+        />
       )}
-    </>
+      <UserList usersList={usersList} setUsersList={setUsersList} />
+    </div>
   );
 };
 

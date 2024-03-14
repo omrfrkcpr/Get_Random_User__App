@@ -11,7 +11,7 @@ function App() {
   // Effect to check screen size on mount and resize
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 350);
+      setIsSmallScreen(window.innerWidth <= 400);
     };
 
     // Check on mount and resize

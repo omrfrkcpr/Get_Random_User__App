@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GetRandomUser from "../components/getRandomUser/GetRandomUser";
 import UserList from "../components/userList/UserList";
@@ -38,6 +38,10 @@ const Home = () => {
     setUser({ ...user, hasUserBeenAdded: true });
     setUsersList([freshUser, ...usersList]);
   };
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
     <div className=" p-3">

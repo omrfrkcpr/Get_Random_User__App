@@ -6,6 +6,10 @@ https://get-random-user-info.netlify.app/
 
 This project aims to fetch random user data via Axios from an open-source, free API or manually create users and store them in a tabular format.
 
+## Outcome
+
+![get-random-user](https://github.com/omrfrkcpr/Get_Random_User__App/assets/77440899/a0de501b-ecff-4c71-bdcd-f6d4bc5c2105)
+
 ## Project Planning & Management
 
 **Epic User Story:** Retrieve and Store User Information
@@ -64,10 +68,6 @@ Get Random User App(folder)
 ├── package.json
 └── README.md
 ```
-
-## Outcome
-
-![get-random-user](https://github.com/omrfrkcpr/Get_Random_User__App/assets/77440899/a0de501b-ecff-4c71-bdcd-f6d4bc5c2105)
 
 ## Objective
 

@@ -1,4 +1,4 @@
-# Get Random User App
+# Get Random User App ©️
 
 💻 https://get-random-user-info.netlify.app/
 
@@ -73,7 +73,7 @@ Get Random User App(folder)
 
 Build a Random User App using ReactJS.
 
-### At the end of the project, following topics are to be covered;
+### At the end of the project, following topics are to be covered; 🎯
 
 - HTML
 
@@ -85,7 +85,7 @@ Build a Random User App using ReactJS.
 
 - Axios (API)
 
-### At the end of the project, will be able to;
+### At the end of the project, will be able to; 💪
 
 - improve coding skills within HTML & CSS & JS & ReactJS.
 
@@ -102,6 +102,6 @@ Your insights and contributions greatly enrich my projects! Whether you're burst
 
 ## LICENSE 🪪
 
-This repository is licensed under the GNU General Public License v3.0 License. See the GPL licence file for details.
+This repository is licensed under the GNU General Public License v3.0 License. See the GPL licence file for details. For more information please visit [GNU License](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 <p align="center"><strong>&#9786; Happy Coding &#9997;</strong></p>
